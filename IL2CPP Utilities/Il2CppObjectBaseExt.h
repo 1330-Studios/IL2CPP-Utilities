@@ -7,15 +7,18 @@ using namespace UnhollowerBaseLib;
 
 namespace _1330Studios {
 	[ExtensionAttribute]
-	static public ref class Il2CppObjectBaseExt abstract sealed {
+	public ref class Il2CppObjectBaseExt abstract sealed {
 	public:
 
 		generic<typename T> where T : Il2CppObjectBase
 		[ExtensionAttribute]
 		static T CloneAs(T instance) {
-			Il2CppObjectBase^ obj = gcnew Il2CppObjectBase(instance->Pointer);
-			T ret = obj->Cast<T>();
-			return ret;
+			return Clone(instance)->Cast<T>();
+		}
+
+		[ExtensionAttribute]
+		static Il2CppObjectBase^ Clone(Il2CppObjectBase^ instance) {
+			return gcnew Il2CppObjectBase(instance->Pointer);
 		}
 	};
 };
