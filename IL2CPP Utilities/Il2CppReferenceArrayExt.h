@@ -44,14 +44,14 @@ namespace _1330Studios {
 		}
 
 		generic<typename T> where T : Il2CppObjectBase
-		[ExtensionAttribute]
+			[ExtensionAttribute]
 		static void Do(Il2CppReferenceArray<T>^ instance, Action<T>^ action) {
 			for (int i = 0; i < instance->Length; i++)
 				action(instance[i]);
 		}
 
 		generic<typename T> where T : Il2CppObjectBase
-		[ExtensionAttribute]
+			[ExtensionAttribute]
 		static void DoIf(Il2CppReferenceArray<T>^ instance, Func<T, bool>^ predicate, Action<T>^ action) {
 			for (int i = 0; i < instance->Length; i++)
 				if (predicate(instance[i]))
@@ -59,7 +59,7 @@ namespace _1330Studios {
 		}
 
 		generic<typename T> where T : Il2CppObjectBase
-		[ExtensionAttribute]
+			[ExtensionAttribute]
 		static Il2CppReferenceArray<T>^ Reverse(Il2CppReferenceArray<T>^ instance) {
 			List<T>^ list = gcnew List<T>();
 			for (int i = instance->Length - 1; i >= 0; i--)
