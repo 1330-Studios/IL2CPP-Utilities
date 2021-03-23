@@ -57,5 +57,15 @@ namespace _1330Studios {
 				if (predicate(instance[i]))
 					action(instance[i]);
 		}
+
+		generic<typename T> where T : Il2CppObjectBase
+		[ExtensionAttribute]
+		static Il2CppReferenceArray<T>^ Reverse(Il2CppReferenceArray<T>^ instance) {
+			List<T>^ list = gcnew List<T>();
+			for (int i = instance->Length - 1; i >= 0; i--)
+				list->Add(instance[i]);
+
+			return gcnew Il2CppReferenceArray<T>(list->ToArray());
+		}
 	};
 }

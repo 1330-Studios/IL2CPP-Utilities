@@ -122,7 +122,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="IL2CPP Utilities.h" />
-    <ClInclude Include="Il2CppArrayBaseExt.h">
+    <ClInclude Include="Il2CppReferenceArrayExt.h">
       <DeploymentContent>true</DeploymentContent>
     </ClInclude>
     <ClInclude Include="pch.h" />
@@ -130,7 +130,7 @@
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="IL2CPP Utilities.cpp" />
-    <ClCompile Include="Il2CppArrayBaseExt.cpp" />
+    <ClCompile Include="Il2CppReferenceArrayExt.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

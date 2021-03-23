@@ -24,7 +24,7 @@
     <ClInclude Include="pch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Il2CppArrayBaseExt.h">
+    <ClInclude Include="Il2CppReferenceArrayExt.h">
       <Filter>Source Files\Extensions</Filter>
     </ClInclude>
   </ItemGroup>
@@ -38,7 +38,7 @@
     <ClCompile Include="pch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Il2CppArrayBaseExt.cpp">
+    <ClCompile Include="Il2CppReferenceArrayExt.cpp">
       <Filter>Source Files\Extensions</Filter>
     </ClCompile>
   </ItemGroup>
