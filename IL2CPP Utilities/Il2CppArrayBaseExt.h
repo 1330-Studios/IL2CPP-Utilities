@@ -1,6 +1,6 @@
 #pragma once
-#include <type_traits>
 
+using namespace System;
 using namespace System::Runtime::CompilerServices;
 using namespace System::Collections::Generic;
 using namespace UnhollowerBaseLib;
@@ -9,16 +9,53 @@ namespace _1330Studios {
 	[ExtensionAttribute]
 	static public ref class Il2CppArrayBaseExt abstract sealed {
 	public:
-		generic<typename il2cppobj> where il2cppobj : Il2CppObjectBase
 
-		[ExtensionAttribute]
-		static Il2CppReferenceArray<il2cppobj>^ Add(Il2CppReferenceArray<il2cppobj>^ instance, ...array<il2cppobj>^ additions) {
-			List<il2cppobj>^ list = gcnew List<il2cppobj>();
+		generic<typename T> where T : Il2CppObjectBase
+			[ExtensionAttribute]
+		static Il2CppReferenceArray<T>^ Add(Il2CppReferenceArray<T>^ instance, ...array<T>^ additions) {
+			List<T>^ list = gcnew List<T>();
 			for (int i = 0; i < instance->Length; i++)
 				list->Add(instance[i]);
 			for (int i = 0; i < additions->Length; i++)
 				list->Add(instance[i]);
-			return gcnew Il2CppReferenceArray<il2cppobj>(list->ToArray());
+			return gcnew Il2CppReferenceArray<T>(list->ToArray());
+		}
+
+		generic<typename T> where T : Il2CppObjectBase
+			[ExtensionAttribute]
+		static Il2CppReferenceArray<T>^ Remove(Il2CppReferenceArray<T>^ instance, Func<T, bool>^ predicate) {
+			List<T>^ list = gcnew List<T>();
+			for (int i = 0; i < instance->Length; i++)
+				if (!predicate(instance[i]))
+					list->Add(instance[i]);
+
+			return gcnew Il2CppReferenceArray<T>(list->ToArray());
+		}
+
+		generic<typename T> where T : Il2CppObjectBase
+			[ExtensionAttribute]
+		static Il2CppReferenceArray<T>^ Select(Il2CppReferenceArray<T>^ instance, Func<T, bool>^ predicate) {
+			List<T>^ list = gcnew List<T>();
+			for (int i = 0; i < instance->Length; i++)
+				if (predicate(instance[i]))
+					list->Add(instance[i]);
+
+			return gcnew Il2CppReferenceArray<T>(list->ToArray());
+		}
+
+		generic<typename T> where T : Il2CppObjectBase
+		[ExtensionAttribute]
+		static void Do(Il2CppReferenceArray<T>^ instance, Action<T>^ action) {
+			for (int i = 0; i < instance->Length; i++)
+				action(instance[i]);
+		}
+
+		generic<typename T> where T : Il2CppObjectBase
+		[ExtensionAttribute]
+		static void DoIf(Il2CppReferenceArray<T>^ instance, Func<T, bool>^ predicate, Action<T>^ action) {
+			for (int i = 0; i < instance->Length; i++)
+				if (predicate(instance[i]))
+					action(instance[i]);
 		}
 	};
 }
