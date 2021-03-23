@@ -7,7 +7,7 @@ using namespace UnhollowerBaseLib;
 
 namespace _1330Studios {
 	[ExtensionAttribute]
-	static public ref class Il2CppArrayBaseExt abstract sealed {
+	static public ref class Il2CppReferenceArrayExt abstract sealed {
 	public:
 
 		generic<typename T> where T : Il2CppObjectBase
