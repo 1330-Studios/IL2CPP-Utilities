@@ -93,6 +93,7 @@
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <GenerateXMLDocumentationFiles>true</GenerateXMLDocumentationFiles>
+      <Optimization>Full</Optimization>
     </ClCompile>
     <Link>
       <AdditionalDependencies />
@@ -121,6 +122,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Arrays.h">
+      <DeploymentContent>true</DeploymentContent>
+    </ClInclude>
     <ClInclude Include="IL2CPP Utilities.h" />
     <ClInclude Include="Il2CppObjectBaseExt.h">
       <DeploymentContent>true</DeploymentContent>
@@ -131,8 +135,11 @@
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Arrays.cpp" />
     <ClCompile Include="AssemblyInfo.cpp" />
-    <ClCompile Include="IL2CPP Utilities.cpp" />
+    <ClCompile Include="IL2CPP Utilities.cpp">
+      <DeploymentContent>true</DeploymentContent>
+    </ClCompile>
     <ClCompile Include="Il2CppObjectBaseExt.cpp" />
     <ClCompile Include="Il2CppReferenceArrayExt.cpp" />
     <ClCompile Include="pch.cpp">

@@ -16,6 +16,9 @@
     <Filter Include="Source Files\Extensions">
       <UniqueIdentifier>{2d71689e-a565-4794-98d9-1b88f5c61524}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Utils">
+      <UniqueIdentifier>{2c1d5397-e830-49f0-a651-ba0e3402613e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IL2CPP Utilities.h">
@@ -29,6 +32,9 @@
     </ClInclude>
     <ClInclude Include="Il2CppObjectBaseExt.h">
       <Filter>Source Files\Extensions</Filter>
+    </ClInclude>
+    <ClInclude Include="Arrays.h">
+      <Filter>Source Files\Utils</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -46,6 +52,9 @@
     </ClCompile>
     <ClCompile Include="Il2CppObjectBaseExt.cpp">
       <Filter>Source Files\Extensions</Filter>
+    </ClCompile>
+    <ClCompile Include="Arrays.cpp">
+      <Filter>Source Files\Utils</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
