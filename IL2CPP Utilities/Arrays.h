@@ -17,14 +17,26 @@ namespace _1330Studios {
 				throw std::exception("Created array's pointer is 0. This will not function correctly!");
 			std::cout << "Array created with the size of " << size << std::endl;
 			Il2CppObjectBase^ obj = gcnew Il2CppObjectBase(arrPtr);
-			try	{
+			try {
 				Il2CppArrayBase<T>^ array = obj->Cast<Il2CppArrayBase<T>^>();
 				return array;
-			} catch (const std::exception& e) {
-				std::cout << "Error thrown when turning Il2CppObjectBase^ into Il2CppArrayBase<T>^!" << std::endl;
-				throw e;
 			}
-			return nullptr;
+			catch (const std::exception&) {
+				std::cout << "Error thrown when turning Il2CppObjectBase^ into Il2CppArrayBase<T>^!" << std::endl;
+				return nullptr;
+			}
+		}
+
+		generic<typename T> where T : System::Object
+		static Il2CppArrayBase<T>^ NewArray(long long size, array<T>^ base) {
+			try	{
+				Il2CppArrayBase<T>^ arr = NewArray<T>(size);
+				for (int i = 0; i < arr->Length; i++)
+					arr[i] = base[i];
+				return arr;
+			} catch (const std::exception&)	{
+				return nullptr;
+			}
 		}
 	};
 }
