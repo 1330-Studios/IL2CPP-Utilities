@@ -23,7 +23,7 @@ namespace _1330Studios {
 
 		generic<typename T> where T : Il2CppObjectBase
 			[ExtensionAttribute]
-		static Il2CppReferenceArray<T>^ Remove(Il2CppReferenceArray<T>^ instance, Func<T, bool>^ predicate) {
+		static Il2CppReferenceArray<T>^ Remove(Il2CppReferenceArray<T>^ instance, System::Predicate<T>^ predicate) {
 			List<T>^ list = gcnew List<T>();
 			for (int i = 0; i < instance->Length; i++)
 				if (!predicate(instance[i]))
@@ -34,7 +34,7 @@ namespace _1330Studios {
 
 		generic<typename T> where T : Il2CppObjectBase
 			[ExtensionAttribute]
-		static Il2CppReferenceArray<T>^ Select(Il2CppReferenceArray<T>^ instance, Func<T, bool>^ predicate) {
+		static Il2CppReferenceArray<T>^ Select(Il2CppReferenceArray<T>^ instance, System::Predicate<T>^ predicate) {
 			List<T>^ list = gcnew List<T>();
 			for (int i = 0; i < instance->Length; i++)
 				if (predicate(instance[i]))
@@ -52,7 +52,7 @@ namespace _1330Studios {
 
 		generic<typename T> where T : Il2CppObjectBase
 			[ExtensionAttribute]
-		static void DoIf(Il2CppReferenceArray<T>^ instance, Func<T, bool>^ predicate, Action<T>^ action) {
+		static void DoIf(Il2CppReferenceArray<T>^ instance, System::Predicate<T>^ predicate, Action<T>^ action) {
 			for (int i = 0; i < instance->Length; i++)
 				if (predicate(instance[i]))
 					action(instance[i]);
