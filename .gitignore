@@ -350,3 +350,4 @@ MigrationBackup/
 .ionide/
 Libs/UnhollowerBaseLib.dll
 Libs/UnhollowerRuntimeLib.dll
+IL2CPP Utilities/.idea
