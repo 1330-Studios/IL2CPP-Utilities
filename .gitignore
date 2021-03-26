@@ -348,6 +348,5 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
-Libs/UnhollowerBaseLib.dll
-Libs/UnhollowerRuntimeLib.dll
-IL2CPP Utilities/.idea
+Libs/
+IL2CPP Utilities/.idea/
